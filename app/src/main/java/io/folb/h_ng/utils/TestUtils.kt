@@ -22,7 +22,9 @@ object TestUtils {
     }
 
     fun rndDateTime(after: LocalDateTime = LocalDateTime.now()): LocalDateTime {
-        return LocalDateTime.of(after.year, after.month, after.dayOfMonth, after.hour + rnd(4), after.minute)
+        var hour = after.hour + rnd(4)
+        if (hour > 23) hour = 23
+        return LocalDateTime.of(after.year, after.month, after.dayOfMonth, hour, after.minute)
     }
 
     private fun rnd(n: Int): Int {

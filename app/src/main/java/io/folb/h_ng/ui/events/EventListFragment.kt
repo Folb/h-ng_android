@@ -38,7 +38,11 @@ class EventListFragment : Fragment() {
             if (view is RecyclerView) {
                 with(view) {
                     layoutManager = LinearLayoutManager(context)
-                    adapter = EventListRecycleViewAdapter(it, listType)
+                    adapter = EventListRecycleViewAdapter(it, listType).apply {
+                        recyclerView = view
+                    }
+
+                    (adapter as EventListRecycleViewAdapter).setFragmentManager(childFragmentManager)
                 }
             }
         })
