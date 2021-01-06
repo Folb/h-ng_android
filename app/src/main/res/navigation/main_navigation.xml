@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/eventsOverviewFragment">
 
+    <fragment
+        android:id="@+id/eventsOverviewFragment"
+        android:name="io.folb.h_ng.ui.events.EventsOverviewFragment"
+        android:label="events_overview_fragment"
+        tools:layout="@layout/events_overview_fragment" />
 </navigation>
