@@ -12,7 +12,7 @@ import io.folb.h_ng.utils.enum.EventListType
 import io.folb.h_ng.utils.toFormattedDate
 import io.folb.h_ng.utils.toFormattedTime
 
-class EventListRecycleViewAdapter(private val events: List<Event>, val listType: EventListType) : RecyclerView.Adapter<EventListRecycleViewAdapter.ViewHolder>() {
+class EventListRecycleViewAdapter(private val events: List<Event>, private val listType: EventListType) : RecyclerView.Adapter<EventListRecycleViewAdapter.ViewHolder>() {
 
     private lateinit var visibleEvents: MutableList<Event>
 
