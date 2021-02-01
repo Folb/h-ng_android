@@ -51,12 +51,14 @@ class EventListRecycleViewAdapter(private val events: List<Event>, private val l
             location.text = event.location
             createdBy.text = event.createdBy
 
-            viewPagerAdapter = EventListViewPagerAdapter(fragmentManager, 0).apply {
-                addFragment(EventDescriptionFragment.newInstance(), "Description")
-                addFragment(EventGuestListFragment.newInstance(), "Guest List")
+            with(viewPager) {
+                adapter = EventListViewPagerAdapter(fragmentManager, 0)
+                    .apply {
+                        addFragment(EventDescriptionFragment.newInstance(), "Description")
+                        addFragment(EventGuestListFragment.newInstance(), "Guest List")
+                    }
+                tabLayout.setupWithViewPager(this)
             }
-            viewPager.adapter = viewPagerAdapter
-            tabLayout.setupWithViewPager(viewPager)
         }
     }
 

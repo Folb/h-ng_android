@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import io.folb.h_ng.R
 import io.folb.h_ng.ui.events.adapters.EventListRecycleViewAdapter
 import io.folb.h_ng.ui.events.viewmodels.EventsViewModel
@@ -37,7 +38,7 @@ class EventListFragment : Fragment() {
         viewModel.getEvents().observe(viewLifecycleOwner, Observer {
             if (view is RecyclerView) {
                 with(view) {
-                    layoutManager = LinearLayoutManager(context)
+                    layoutManager = GridLayoutManager(context,  1)
                     adapter = EventListRecycleViewAdapter(it, listType).apply {
                         recyclerView = view
                     }
