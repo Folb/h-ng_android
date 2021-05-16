@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.folb.h_ng.ui.events.viewmodels.CreateEventViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/default_margin"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/edit_text_item"
+            app:editTextDescription="Title: "
+            app:editTextInput="@={viewModel.title}" />
+
+        <include
+            layout="@layout/edit_text_item"
+            app:editTextDescription="Location: "
+            app:editTextInput="@={viewModel.location}" />
+
+        <!-- TODO: Add start and end time -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnCreateEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create" />
+    </LinearLayout>
+
+</layout>

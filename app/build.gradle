@@ -57,6 +57,9 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.2"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.2"
 
+    //Virgil
+    implementation 'com.virgilsecurity:ethree:2.0.8'
+
     //ExpandableView
     implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
 

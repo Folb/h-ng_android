@@ -9,5 +9,13 @@
         android:id="@+id/eventsOverviewFragment"
         android:name="io.folb.h_ng.ui.events.EventsOverviewFragment"
         android:label="events_overview_fragment"
-        tools:layout="@layout/events_overview_fragment" />
+        tools:layout="@layout/events_overview_fragment" >
+        <action
+            android:id="@+id/action_eventsOverviewFragment_to_createEventFragment"
+            app:destination="@id/createEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createEventFragment"
+        android:name="io.folb.h_ng.ui.events.CreateEventFragment"
+        android:label="CreateEventFragment" />
 </navigation>
