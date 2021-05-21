@@ -18,12 +18,12 @@
 
         <include
             layout="@layout/edit_text_item"
-            app:editTextDescription="Title: "
+            app:editTextDescription="@{@string/title}"
             app:editTextInput="@={viewModel.title}" />
 
         <include
             layout="@layout/edit_text_item"
-            app:editTextDescription="Location: "
+            app:editTextDescription="@{@string/description}"
             app:editTextInput="@={viewModel.location}" />
 
         <!-- TODO: Add start and end time -->

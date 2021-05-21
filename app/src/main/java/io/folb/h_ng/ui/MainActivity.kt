@@ -1,8 +1,9 @@
-
+package io.folb.h_ng.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.virgilsecurity.android.common.model.EThreeParams
+import dagger.Component
+
 import io.folb.h_ng.R
 
 class MainActivity : AppCompatActivity() {

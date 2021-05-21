@@ -28,10 +28,4 @@ class EventsOverviewFragment : Fragment() {
         val transaction = childFragmentManager.beginTransaction()
         transaction.replace(R.id.eventListContainer, eventListFragment).commit()
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(EventsViewModel::class.java)
-    }
-
 }

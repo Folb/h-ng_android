@@ -1,27 +1,25 @@
 package io.folb.h_ng.ui.events.viewmodels
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import io.folb.h_ng.io.repos.event.EventRepository
 import io.folb.h_ng.models.Event
 import io.folb.h_ng.utils.UserUtil
 import io.folb.h_ng.utils.enum.defaultLocation
 import io.folb.h_ng.utils.enum.defaultTitle
 import java.time.LocalDateTime
+import javax.inject.Inject
 
-class CreateEventViewModel : ViewModel() {
+class CreateEventViewModel @Inject constructor(private val eventRepository: EventRepository) : ViewModel() {
 
-     private var _title: MutableLiveData<String> = MutableLiveData()
-     val title: LiveData<String> get() = _title
+     var title: MutableLiveData<String> = MutableLiveData()
 
-     private var _location: MutableLiveData<String> = MutableLiveData()
-     val location: LiveData<String> get() = _location
+     var location: MutableLiveData<String> = MutableLiveData()
 
-     private var _startTime: MutableLiveData<LocalDateTime> = MutableLiveData()
-     val startTime: LiveData<LocalDateTime> get() = _startTime
+     var startTime: MutableLiveData<LocalDateTime> = MutableLiveData()
 
-     private var _endTime: MutableLiveData<LocalDateTime> = MutableLiveData()
-     val endTime: LiveData<LocalDateTime> get() = _endTime
+     var endTime: MutableLiveData<LocalDateTime> = MutableLiveData()
+
 
      fun saveEvent() {
           //TODO: Error check form before submit
@@ -32,7 +30,7 @@ class CreateEventViewModel : ViewModel() {
           val et = endTime.value ?: st.plusHours(12)
 
           val event = Event(tit, loc, user, st, et)
-          
+
           //TODO: Save event in backend
      }
 }

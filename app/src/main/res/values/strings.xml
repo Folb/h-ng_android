@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">h-ng</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title">Title</string>
     <string name="create">Create</string>
+
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+
 </resources>
